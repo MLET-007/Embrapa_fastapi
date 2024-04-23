@@ -25,7 +25,7 @@ app = FastAPI()
 app.mount('/mkdocs', StaticFiles(directory='site', html=True), name='mkdocs')
 
 @app.get('/api/importar_csv_site_embrapa')
-def importa_csv(online: bool = False, description="Define se a importação será online ou offline"):
+def importa_csv(online: bool = False):
     try:
         import_embrapa.import_csv_site_embrapa(online)
         return 'Arquivos CSVs importados com sucesso do site da Embrapa!'
