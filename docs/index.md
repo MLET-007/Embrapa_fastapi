@@ -115,5 +115,5 @@ Você pode executar qualquer tarefa usando o comando `poetry run task NOME_DA_TA
 ```py title="Exemplo task"
 [tool.taskipy.tasks]
 format = 'blue .  && isort .'
-run = 'uvicorn embrapa.app:app --reload'
+run = 'uvicorn app:app --reload'
 ```
