@@ -24,6 +24,7 @@ app = FastAPI()
 
 app.mount('/mkdocs', StaticFiles(directory='site', html=True), name='mkdocs')
 
+
 @app.get('/api/importar_csv_site_embrapa')
 def importa_csv(online: bool = False):
     try:

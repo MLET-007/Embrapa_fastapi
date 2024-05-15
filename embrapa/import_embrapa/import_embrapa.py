@@ -12,6 +12,7 @@ class read_dataset(object):
         - `__init__`
         - f_read_datasets
     """
+
     def __init__(self, path: str, dataset: str, cols: list):
         self.path = path
         self.dataset = dataset
@@ -68,6 +69,7 @@ class etl_methods(object):
         - f_std_column_names
         - f_unpivot_table
     """
+
     def __init__(self, cols, values_unpivot):
         self.cols = cols
         self.values_unpivot = values_unpivot
@@ -98,7 +100,7 @@ class etl_methods(object):
     # nualmente nos codigos para inclusão de novos anos)
 
     def f_unpivot_table(self, dataframe) -> pd.core.frame.DataFrame:
-        """Função para despivotar as tabelas do site da embrapa. 
+        """Função para despivotar as tabelas do site da embrapa.
 
         Args:
             self (Construtor): Todos os parâmetros do construtor.
@@ -151,7 +153,7 @@ class etl_methods(object):
             self (Construtor): Todos os parâmetros do construtor.
             dataframe (Dataframe): Dataframe pandas.
             col_name: Nome da coluna para tratar missings.
-            
+
         Returns:
             dataframe: Dataframe com coluna com missings tratados
         """
@@ -208,14 +210,14 @@ class etl_methods(object):
         self, dataframe: pd.core.frame.DataFrame, cols_to_drop, cols_to_rename
     ) -> pd.core.frame.DataFrame:
         """
-        Função para renomear e remover colunas. 
+        Função para renomear e remover colunas.
 
         Args:
             self (Construtor): Todos os parametros do construtor.
             dataframe (Dataframe): Dataframe pandas.
             cols_to_drop (list, None): Lista de nomes das colunas que serão removidas. Se None, nenhuma coluna pe removida
             cols_to_rename (dict, None): Dicionario com mapeamento dos nomes das colunas. Se None, nenhuma coluna é renomeada
-            
+
         Returns:
             dataframe: Dataframe com as colunas renomeadas/removidas determinadas
         """
@@ -329,7 +331,7 @@ class etl_methods(object):
     def f_remove_dot_1(
         self, df_dol: pd.core.frame.DataFrame
     ) -> pd.core.frame.DataFrame:
-        
+
         """Função para retirar colunas que terminam com o sufixo ".1"
 
         Args:
@@ -353,15 +355,16 @@ def f_adjust_table(
 ) -> pd.core.frame.DataFrame:
     """Função para ajustar um dataframe com todas as funções dentro de "etl_methods"
 
-        Args:
-            df (Dataframe): Dataframe 
-            cols (object): Colunas do dataframe
-            value_unpivot (object): Colunas despivotadas (?)
-            dataset: Dataset
+    Args:
+        df (Dataframe): Dataframe
+        cols (object): Colunas do dataframe
+        value_unpivot (object): Colunas despivotadas (?)
+        dataset: Dataset
 
-        Returns:
-            df_final: Dataframe filtrado
+    Returns:
+        df_final: Dataframe filtrado
     """
+
     def f_create_type_product(row, column):
         if row[column][-1].isupper():
             return row[column]
@@ -490,7 +493,7 @@ def import_csv_site_embrapa(online: bool):
             'processamento': 'embrapa/csv_files/ProcessaViniferas.csv',
             'exportacao': 'embrapa/csv_files/ExpVinho.csv',
             'importacao': 'embrapa/csv_files/ImpVinhos.csv',
-        }    
+        }
 
     for dataset in list(paths.keys()):
 
