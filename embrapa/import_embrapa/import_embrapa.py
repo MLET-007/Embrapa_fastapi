@@ -1,3 +1,18 @@
+#embrapa_fastapi/import_embrapa.py
+
+"""
+O arquivo `import_embrapa.py` tem como função filtrar e carregar os arquivos .csv/dataset do [site da embrapa](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01).\
+ Possuindo aqui a explicação detalhada de suas funções, classes e citação das bibliotecas utilizadas.
+
+Bibliotecas utilizadas:
+    - re
+    - sqlite3
+    - numpy
+    - pandas
+    - unidecode
+
+"""
+
 import re
 import sqlite3
 
@@ -128,7 +143,7 @@ class etl_methods(object):
 
         Args:
             self (Construtor): Todos os parâmetros do construtor.
-            dataframe (Dataframe): Dataframe pandas.
+             dataframe (Dataframe): Dataframe pandas.
             col_name: Nome da coluna para remoção de acentos.
 
         Returns:

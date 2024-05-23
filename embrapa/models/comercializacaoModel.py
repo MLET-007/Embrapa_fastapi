@@ -2,6 +2,10 @@ from sqlalchemy import Column, Integer, String
 
 from embrapa.database import Base
 
+"""
+testee
+uhul
+"""
 
 class Comercializacao(Base):
     __tablename__ = 'comercializacao'

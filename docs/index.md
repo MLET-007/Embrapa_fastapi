@@ -20,18 +20,22 @@ A API será utilizada para alimentar uma base de dados de um modelo de Machine L
 - Documentar a API.
 - Criação de método de autenticação  - JWT.
 - Plano de deploy da API
-- Apresentar um MVP com o deploy e link.
+- Apresentar um MVP em uma imagem Docker.
 
 ## Tecnologias Utilizadas e Dependências
 
 - Python: 3.12.2
 - FastAPI
 - Uvicorn
-- SQLAlchem
+- SQLAlchemy
 - Pandas
 - Aiosqlite
 - Greenlet
-- Isort:
+- Unidecode
+- Mkdocs
+- Mkdocs-material
+- Mkdocstring
+- Isort
 - Taskipy
 - Blue
 - Httpx
@@ -44,6 +48,8 @@ Pré-requisitos:
 
 - Python
 - Poetry
+
+---
 
 ### Instalação do Pyenv e Poetry
 
@@ -92,6 +98,16 @@ poetry install
 
 ```py
 poetry shell
+```
+
+---
+
+### Buildando as paginas da documentação
+
+Para que a documentação do projeto seja executada com sucesso, use o seguinte comando:
+
+```py
+mkdocs build
 ```
 
 ### Executando o Projeto
